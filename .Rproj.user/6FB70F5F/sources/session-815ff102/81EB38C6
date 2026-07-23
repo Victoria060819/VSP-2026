@@ -1,26 +1,26 @@
 {
-    "id": "EF82E592",
-    "path": "~/Desktop/Programming Assignment 1.Rmd",
-    "project_path": null,
+    "id": "81EB38C6",
+    "path": "~/Desktop/VSP-2026/Programming Assignment 1.Rmd",
+    "project_path": "Programming Assignment 1.Rmd",
     "type": "r_markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1784829698755.0,
+    "created": 1784832575787.0,
     "source_on_save": false,
-    "relative_order": 7,
+    "relative_order": 5,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "215,0",
-        "scrollLine": "182"
+        "cursorPosition": "180,3",
+        "scrollLine": "180"
     },
     "folds": "",
-    "lastKnownWriteTime": 1784832333,
+    "lastKnownWriteTime": 1784832840,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1784832333847,
+    "last_content_update": 1784832840666,
     "read_only": false,
     "read_only_alternatives": []
 }
