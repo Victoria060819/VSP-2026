@@ -1,26 +1,26 @@
 {
-    "id": "3A9EF49C",
+    "id": "FBA3F9E0",
     "path": "~/Desktop/VSP-2026/module1 .Rmd",
     "project_path": "module1 .Rmd",
     "type": "r_markdown",
     "hash": "0",
     "contents": "",
-    "dirty": true,
-    "created": 1784739695591.0,
+    "dirty": false,
+    "created": 1784831258725.0,
     "source_on_save": false,
     "relative_order": 4,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
         "cursorPosition": "122,17",
-        "scrollLine": "114"
+        "scrollLine": "112"
     },
     "folds": "",
-    "lastKnownWriteTime": 1784751889,
+    "lastKnownWriteTime": 1784829785,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1784827384282,
+    "last_content_update": 1784829785,
     "read_only": false,
     "read_only_alternatives": []
 }

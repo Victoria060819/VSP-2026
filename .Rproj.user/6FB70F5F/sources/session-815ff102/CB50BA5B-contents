@@ -1,0 +1,136 @@
+---
+title: "Reference Sheet"
+output: html_document
+---
+
+This cheat sheet is provided during the programming assessment. It contains the syntax you have learned in class.
+
+```{r setp, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+---
+
+# Creating variables
+
+```{r}
+x <- 5
+y <- 10
+z <- "Hello"
+```
+
+---
+
+# Vectors
+
+```{r}
+x <- c(1, 2, 3)
+
+x[1]      # first value
+x[2]      # second value
+```
+
+---
+
+# Comparison operators
+
+```{r}
+x > 5
+x >= 5
+x < 5
+x <= 5
+x == 5
+x != 5
+```
+
+---
+
+# Logical operators
+
+```{r}
+TRUE & TRUE     # AND
+TRUE | FALSE    # OR
+!TRUE           # NOT
+```
+
+---
+
+# Logical vectors
+
+```{r}
+x <- c(1, 2, 3)
+
+x > 1
+```
+
+---
+
+# Vector subsetting
+
+```{r}
+x <- c(1, 2, 3)
+
+y <- x > 1
+
+x[y]
+```
+
+---
+
+# Useful functions
+
+```{r}
+x <- c(1, 2, 3)
+
+sum(x)
+mean(x)
+length(x)
+```
+
+```{r}
+x <- c(a = 1, b = 2, c = 3)
+
+names(x)
+```
+
+---
+
+# If statements
+
+```{r}
+if (TRUE) {
+  # ...
+} else {
+  # ...
+}
+```
+
+---
+
+# For loops
+
+Loop over values:
+
+```{r}
+for (val in x) {
+  ...
+}
+```
+
+Loop over names:
+
+```{r}
+for (id in names(x)) {
+  ...
+}
+```
+
+---
+
+# Accessing values by name
+
+```{r}
+x <- c(a = 1, b = 2, c = 3)
+
+x["a"]
+```
