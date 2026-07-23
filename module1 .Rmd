@@ -1,0 +1,128 @@
+---
+title: "module1 "
+output: html_document
+---
+
+```{r}
+
+fev1 <- c(
+  Patient_01 = 85,
+  Patient_02 = 62,
+  Patient_03 = 45,
+  Patient_04 = 91,
+  Patient_05 = 38,
+  Patient_06 = 70,
+  Patient_07 = 55,
+  Patient_08 = 76,
+  Patient_09 = 49,
+  Patient_10 = 88
+)
+
+age <- c( 
+  Patient_01 = 23, 
+  Patient_02 = 67, 
+  Patient_03 = 41, 
+  Patient_04 = 58, 
+  Patient_05 = 34, 
+  Patient_06 = 72, 
+  Patient_07 = 29, 
+  Patient_08 = 46, 
+  Patient_09 = 81, 
+  Patient_10 = 19 
+)
+```
+
+How many patients are younger than 40?
+
+```{r}
+
+sum(age < 40)
+
+sum((age>25) &(40 <= fev1) & (fev1<=70))
+
+sum((age%%2==0) & (fev1%%2!=0))
+
+id<- fev1[fev1<70]
+print(id)
+
+```
+
+Write a series of expressions that categorize Patient 02's FEV1 as:
+"Healthy" if FEV1 is greater than 80 
+"Moderate impairment" if FEV1 between 60 and 80 
+"Poor" if FEV1 is between 40 and 60 
+"Very poor" if FEV1 is less than 40
+```{r}
+ p2 <- fev1 ["Patient_02"]
+
+if(p2 > 80){
+  print("Healthy")
+}else if((80 > p2) & ( p2>60)){
+  print("Moderate impairment")
+}else if((60>p2)& (p2>40)){
+  print("Poor")
+}else{
+  print("Very poor")
+}
+
+
+```
+Go through every patient’s FEV1 and print:
+"Healthy" if FEV1 is greater than 80 
+"Moderate impairment" if FEV1 between 60 and 80 
+"Poor" if FEV1 is between 40 and 60 
+"Very poor" if FEV1 is less than 40
+
+
+Now modify the loop to print something like:Patient_01: HealthyPatient_02: Moderate
+
+```{r}
+
+for( p in names(fev1)){
+  if( fev1[p] > 80){
+  print(paste0( p,":Healthy"))
+  }else if( fev1[p] >60){
+  print(paste0( p,":Moderate impairment"))
+  }else if(fev1[p]>40){
+  print(paste0( p,":Poor"))
+  }else{
+  print(paste0( p,":Very poor"))
+}}
+
+
+
+```
+```{r}
+
+over_3_vec <- c()
+for(patientid in names(age)){
+}
+
+for(patientid in names(age)){
+  print(paste(patientid,age[patientid]))
+  if(age[patientid] >30){
+    print("Over 30")
+  }
+  else{
+    print("under 30")
+  }
+  
+}
+
+```
+Write a for loop that:
+Prints the age and FEV1 of each participant 
+Keeps a running total of participant ages 
+Stops the loop once the cumulative age exceeds 150 
+
+```{r}
+cumi_age<-0
+for(id in names(fev1)){
+  print(paste(id,":","age=",age[id],"FEV1=",fev1[id]))
+  cumi_age <- cumi_age + age[id]
+if(cumi_age>150){
+  break
+}
+}
+
+```

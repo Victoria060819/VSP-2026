@@ -1,0 +1,139 @@
+---
+title: "Module_1"
+output: html_document
+---
+Load the example data
+```{r}
+fev1 <- c(
+  Patient_01 = 85,
+  Patient_02 = 62,
+  Patient_03 = 45,
+  Patient_04 = 91,
+  Patient_05 = 38,
+  Patient_06 = 70,
+  Patient_07 = 55,
+  Patient_08 = 76,
+  Patient_09 = 49,
+  Patient_10 = 88
+)
+
+age <- c(
+  Patient_01 = 23, 
+  Patient_02 = 67, 
+  Patient_03 = 41, 
+  Patient_04 = 58, 
+  Patient_05 = 34, 
+  Patient_06 = 72, 
+  Patient_07 = 29, 
+  Patient_08 = 46, 
+  Patient_09 = 81, 
+  Patient_10 = 19
+)
+
+```
+
+
+How many patients are younger than 40?
+
+```{r}
+sum(age < 40)
+
+```
+
+How many patients are older than 25, and have an FEV1 between 40 and 70 (inclusive)?
+```{r}
+age_logical <- age > 25
+
+fev1_logical <- (fev1 >= 40) & (fev1 <= 70)
+
+sum(age_logical & fev1_logical)
+```
+How many patients have an even age (divisible by 2) and an odd fev1?
+Hint: try the modulo operator (%%)
+```{r}
+sum((fev1 %% 2 == 1) & (age %% 2 == 0))
+```
+Create a logical vector indicating which patients have reduced lung function (FEV1 < 70), then print the IDs of those patients
+```{r}
+reduced_lung_function <- fev1 < 70
+
+names(fev1)[reduced_lung_function]
+
+```
+
+Go through every patient’s FEV1 and print:
+"Healthy" if FEV1 is greater than 80 
+"Moderate impairment" if FEV1 between 60 and 80 
+"Poor" if FEV1 is between 40 and 60 
+"Very poor" if FEV1 is less than 40
+
+
+Now modify the loop to print something like:
+Patient_01: Healthy
+Patient_02: Moderate
+...
+
+
+```{r}
+patient_1_fev1 <- fev1["Patient_01"]
+patient_2_fev1 <- fev1["Patient_02"]
+
+for (patient_id in names(fev1)) {
+
+  if (fev1[patient_id]  > 80) {
+    print(paste0(patient_id, ": Healthy"))
+  } else if (patient_id  > 60) {
+    print(paste0(patient_id, ": Moderate inmpairment"))
+  } else if (fev1[patient_id]  > 40) {
+    print(paste0(patient_id, ": Poor"))
+  } else {
+    print(paste0(patient_id,": Very poor"))
+  }
+}
+```
+1) Write a for loop that prints every age
+```{r}
+for (patient_age in age) {
+  print(patient_age)
+}
+```
+
+Using the age vector, write a loop that creates a character vector containing:
+"over 30" if the patient is older than 30 
+"under 30" if the patient is 30 or younger 
+The final vector should have the same length as age.
+
+```{r}
+for (x in age) {
+  print(x)
+  
+  if (x == 72) {
+    break
+  }
+}
+```
+
+
+Write a for loop that:
+Prints the age and FEV1 of each participant 
+Keeps a running total of participant ages 
+Stops the loop once the cumulative age exceeds 150 
+
+Example output:
+Patient_01: age = 23, FEV1 = 99
+Patient_02: age = 88, FEV1 = 14
+Patient_03: age = 55, FEV1 = 72
+
+```{r}
+total_age <- 0
+
+for (id in names(age)) {
+  print(paste0(id, ": age = ", age[id], ", FEV1 = ", fev1[id]))
+  
+  total_age <- total_age + age[id]
+  
+  if (total_age > 150) {
+    break
+  }
+}
+```
